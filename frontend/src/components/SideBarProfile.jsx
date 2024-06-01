@@ -3,17 +3,19 @@ import {RiLockPasswordLine} from 'react-icons/ri'
 import {FiLogOut} from 'react-icons/fi'
 import profile from '/profile.jpg'
 import { useNavigate } from 'react-router-dom'
-import { useLogoutQuery } from '../redux/features/auth/authApi'
+import { useLogoutQuery,useLoadUserQuery } from '../redux/features/auth/authApi'
 import toast from 'react-hot-toast'
 const SideBarProfile = ({active,setactive,user}) => {
   let navigate = useNavigate();
   const [logout, setlogout] = useState(false)
+  let {refetch}=  useLoadUserQuery("",{refetchOnMountOrArgChange:true})
   let {isSuccess,error} = useLogoutQuery("",{ skip: !logout ? true : false });
     const handleLogout=()=>{
             setlogout(true);
     }
     useEffect(()=>{
  if(isSuccess){
+   refetch();
   toast.success("user logout successfully");
   navigate("/login");
  }
