@@ -98,7 +98,18 @@ const logOutUser=(req,res)=>{
 const id=req.id;
 
 try {
-    res.cookie("access_token","", {maxAge:""} );
+    let  accessTokenOptions = {
+            maxAge: 1,
+            httpOnly: true,
+            sameSite: "lax",
+            path:"/"
+        }
+     if(process.env.NODE_ENV === 'production'){
+                accessTokenOptions.secure = true;
+                accessTokenOptions.sameSite="None"
+        
+            }
+    res.cookie("access_token","",accessTokenOptions );
 res.json({
     success:true,
     message:"user logout successfully"
