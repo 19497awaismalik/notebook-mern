@@ -12,7 +12,7 @@ const app=express();
 Connection()
 
 const option={
-    origin:["http://localhost:5173"],
+    origin:["https://notebook-mern-client.vercel.app"],
     credentials:true,
     method:["GET","POST","PUT","DELETE"]
 }
