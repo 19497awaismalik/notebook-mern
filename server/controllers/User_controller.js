@@ -98,7 +98,7 @@ const logOutUser=(req,res)=>{
 const id=req.id;
 
 try {
-    res.cookie("access_token","");
+    res.cookie("access_token","", {maxAge:""} );
 res.json({
     success:true,
     message:"user logout successfully"
