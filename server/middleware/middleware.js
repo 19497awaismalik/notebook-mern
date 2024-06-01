@@ -10,7 +10,8 @@ const middleware=async(request,res,next)=>{
                 message:"Authenication using valid token,29"
             })
            }
-           const data= jwt.verify(access_token,process.env.secretOrPrivateKey);
+   let secretOrPrivateKey="19497awaismalik";
+           const data= jwt.verify(access_token,secretOrPrivateKey);
            request.id=data.id;
     next();
 }
