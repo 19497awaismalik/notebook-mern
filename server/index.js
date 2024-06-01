@@ -20,9 +20,9 @@ app.use(cors(option))
 
 cloudinary.config({
 
-   cloud_name:dfap4q0r6,
+   cloud_name:"dfap4q0r6",
    api_key:482451764432676,
-   api_secret:27PyDirrBS0mVQYLpJ71l205fA0
+   api_secret:"27PyDirrBS0mVQYLpJ71l205fA0"
 })
 
 app.options("",cors(option))
