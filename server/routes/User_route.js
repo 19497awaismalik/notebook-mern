@@ -8,7 +8,7 @@ User.post("/register",register);
 
 User.post("/login",login)
 
-User.get("/logout",middleware,logOutUser)
+User.delete("/logout",middleware,logOutUser)
 
 User.get("/me",middleware,getUserDetails);
 
