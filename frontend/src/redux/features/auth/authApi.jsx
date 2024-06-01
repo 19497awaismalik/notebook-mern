@@ -34,7 +34,7 @@ const authApi = apiSlice.injectEndpoints({
        logout:builder.query({
           query:()=>({
             url:"logout",
-            method:"GET",
+            method:"DELETE",
             credentials:"include"
           }),
           async onQueryStarted(arg,{queryFulfilled,dispatch}){
