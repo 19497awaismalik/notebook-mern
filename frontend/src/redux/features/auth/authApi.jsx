@@ -39,7 +39,7 @@ const authApi = apiSlice.injectEndpoints({
           }),
           async onQueryStarted(arg,{queryFulfilled,dispatch}){
             try {
-              let result=await queryFulfilled;
+              // let result=await queryFulfilled;
                 dispatch(userLogOut());
             } catch (error) {
               console.log(error)
